@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Создаём каталог с упражнением на основе содержимого каталога Skel.
+# Все файлы из каталога Skel будут перенесены в созданный каталог.
+# В их именах символы NN будут заменены на указанный номер упражнения.
+# В их тексте символы NN будут заменены на указанный номер упражнения.
+
+echo 'Begin work'
+WORKDIR=`pwd`
+echo "Current workdir is $WORKDIR"
+
+SKELDIR=$WORKDIR/Skel
+echo "Skeleton directory should be at $SKELDIR..." 
+
+if [ ! -d "$SKELDIR"  ] ; then
+  echo "WHERE IS MY LESSON SKELETON DIR?! ;("
+  exit 2
+fi
+
+NUMBER=$1
+
+if [ -z $NUMBER ] ; then
+  echo "USAGE: $0 LESSON_NUMBER"
+  exit 1
+fi
+
+LESSONDIR="$WORKDIR/Lesson $NUMBER"
+echo "Lesson directory is $LESSONDIR"
+
+mkdir "$LESSONDIR"
+cd "$LESSONDIR"
+
+echo "Changed to $LESSONDIR, copying files..."
+cp "$SKELDIR"/* .
+echo "Files from skeleton copied."
+
+
+echo "Should rename the files according to lesson number..."
+rename "s/NN/$NUMBER/g" *.pas
+echo "Done renaming."
+
+echo "Should correct the files according to lesson number..."
+sed -i "s/NN/$NUMBER/g" *
+echo "Done correcting"
