@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "The Last Step", "The Last Step.vcproj", "{C31CFF81-EF88-48B5-9AAA-03224704161C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{C31CFF81-EF88-48B5-9AAA-03224704161C}.Debug.ActiveCfg = Debug|Win32
+		{C31CFF81-EF88-48B5-9AAA-03224704161C}.Debug.Build.0 = Debug|Win32
+		{C31CFF81-EF88-48B5-9AAA-03224704161C}.Release.ActiveCfg = Release|Win32
+		{C31CFF81-EF88-48B5-9AAA-03224704161C}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
