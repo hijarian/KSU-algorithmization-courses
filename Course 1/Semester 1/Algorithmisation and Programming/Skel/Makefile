@@ -1,14 +1,20 @@
 FPCDIR=/usr/lib/fpc/2.6.0/units/x86_64-linux
-TESTSCFG=-Fu"../FPTest/" -Fu"$(FPCDIR)/fcl-base" -Mobjfpc
+FPTESTDIR=../FPTest/
+TESTSCFG=-Fu"$(FPTESTDIR)" -Fu"$(FPCDIR)/fcl-base" -Mobjfpc
+
 LESSONIDX=NN
 
-all: tests lesson clean
+all: tests lesson task clean
 
-tests:
+tests: Tests$(LESSONIDX).pas
 	fpc $(TESTSCFG) Tests$(LESSONIDX).pas
-lesson:
+
+lesson: Lesson$(LESSONIDX).pas
 	fpc Lesson$(LESSONIDX).pas
 
+task: Task$(LESSONIDX).tex
+	pdflatex Task$(LESSONIDX).tex
+
 clean:
-	rm *.o *.ppu
+	rm *.o *.ppu *.aux *.log
 

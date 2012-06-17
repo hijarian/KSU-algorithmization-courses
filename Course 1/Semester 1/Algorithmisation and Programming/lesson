@@ -10,7 +10,7 @@ WORKDIR=`pwd`
 echo "Current workdir is $WORKDIR"
 
 SKELDIR=$WORKDIR/Skel
-echo "Skeleton directory should be at $SKELDIR..." 
+echo "Skeleton directory should be at $SKELDIR..."
 
 if [ ! -d "$SKELDIR"  ] ; then
   echo "WHERE IS MY LESSON SKELETON DIR?! ;("
@@ -36,7 +36,7 @@ echo "Files from skeleton copied."
 
 
 echo "Should rename the files according to lesson number..."
-rename "s/NN/$NUMBER/g" *.pas
+rename "s/NN/$NUMBER/g" *.pas *.tex
 echo "Done renaming."
 
 echo "Should correct the files according to lesson number..."
